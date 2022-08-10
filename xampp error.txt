@@ -1,0 +1,32 @@
+Fix apache not start:
+	goto XAMPP control panel
+	go to config select apache httpd.conf
+	search for 80 and replace all with 8080
+
+	goto config select apache httpd-ssl.conf
+	search 443 and replace all with 4343
+
+Fix mysql not start
+	goto config of mysql
+	select my.ini
+	search for 3306 and replace with 3308
+
+Quick start
+	config
+	Server and port setting
+	set Apache > Main port 8080 and ssl 4343
+	set Mysql > port 3308
+
+Fix error of invalid setting:
+	goto xampp folder > phpmyadmin > config.inc.php
+	and change this:
+	
+	
+/* Authentication type and info */
+$cfg['Servers'][$i]['auth_type'] = 'config';
+$cfg['Servers'][$i]['user'] = 'root';
+$cfg['Servers'][$i]['password'] = '';
+$cfg['Servers'][$i]['extension'] = 'mysqli';
+$cfg['Servers'][$i]['AllowNoPassword'] = true;
+$cfg['Servers'][$i]['port'] = 3308;
+$cfg['Lang'] = '';
